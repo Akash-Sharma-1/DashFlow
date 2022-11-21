@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "Minbus-A352";
+  src: local("Minbus-A352"), url(./fonts/Minbus-A352.otf) format("truetype");
+}
+@font-face {
+  font-family: "Product Sans";
+  src: url("./Product\ Sans\ Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Relative";
+  src: url("./Relative.woff") format("woff");
+}
+
+body {
+  background-color: #f5f4f3;
+  padding: 20px;
+  overflow: scroll;
+  font-family: "Relative";
+  font-weight: 500;
+  color: #272626;
+}
