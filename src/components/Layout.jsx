@@ -21,6 +21,9 @@ import "react-resizable/css/styles.css";
 import "./../App.css";
 import MsCalendar from "./Widgets/MsCalendar";
 import MsTodo from "./Widgets/MsTodo";
+import CodeSearch from "./Widgets/CodeSearch";
+import ReviewBoard from "./Widgets/ReviewBoard";
+import BatCave from "./Widgets/BatCave";
 
 // const props = {
 //   isDraggable: true,
@@ -213,10 +216,10 @@ export default class ShowcaseLayout extends React.Component {
             </MsalProvider>
           </div>
           <div key="8">
-            <Github />
+            <CodeSearch />
           </div>
           <div key="9">
-            <Github />
+            <BatCave />
           </div>
         </ResponsiveReactGridLayout>
       </motion.div>

@@ -24,3 +24,7 @@ export const graphConfig = {
   graphCalendarEndPoint: `https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${new Date().toISOString()}&enddatetime=${new Date((new Date()).setDate((new Date()).getDate() + 7)).toISOString()}`,
   graphTodoEndPoint: "https://graph.microsoft.com/v1.0/me/todo/lists",
 };
+
+export const mwAPIs = {
+  mwCodeSearchEndpoint: "https://codesearch.mathworks.com/search?template_id=1&searchText=",
+}
