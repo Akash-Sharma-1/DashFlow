@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { msalConfig } from "../authConfig";
 
 //compons
 import layoutConfig from "./layoutconfig";
@@ -10,11 +13,14 @@ import Bio from "./Widgets/Bio";
 import Spotify from "./Widgets/Spotify";
 import Calendar from "./Widgets/Calendar";
 import Todos from "./Widgets/Todos";
+import Mail from "./Widgets/Mail";
 
 //styles
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import "./../App.css";
+import MsCalendar from "./Widgets/MsCalendar";
+import MsTodo from "./Widgets/MsTodo";
 
 // const props = {
 //   isDraggable: true,
@@ -117,6 +123,8 @@ import "./../App.css";
 
 // export default Layout;
 
+const msalInstance = new PublicClientApplication(msalConfig);
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default class ShowcaseLayout extends React.Component {
@@ -187,16 +195,22 @@ export default class ShowcaseLayout extends React.Component {
             <Spotify />
           </div>
           <div key="4">
-            <Github />
+            <MsalProvider instance={msalInstance}>
+              <Mail />
+            </MsalProvider>
           </div>
           <div key="5">
             <Todos />
           </div>
           <div key="6">
-            <Github />
+            <MsalProvider instance={msalInstance}>
+              <MsCalendar />
+            </MsalProvider>
           </div>
           <div key="7">
-            <Github />
+            <MsalProvider instance={msalInstance}>
+              <MsTodo />
+            </MsalProvider>
           </div>
           <div key="8">
             <Github />
