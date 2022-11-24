@@ -17,9 +17,10 @@ export const loginRequest = {
 };
 
 // Add the endpoints here for Microsoft Graph API services you'd like to use.
+
 export const graphConfig = {
   graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
   graphMailEndPoint: "https://graph.microsoft.com/v1.0/me/messages",
-  graphCalendarEndPoint: "https://graph.microsoft.com/v1.0/me/events",
+  graphCalendarEndPoint: `https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${new Date().toISOString()}&enddatetime=${new Date((new Date()).setDate((new Date()).getDate() + 7)).toISOString()}`,
   graphTodoEndPoint: "https://graph.microsoft.com/v1.0/me/todo/lists",
 };

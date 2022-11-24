@@ -48,14 +48,21 @@ const ProfileContent = () => {
     <>
       <h6>Welcome {name}</h6>
       {graphData ? (
-        <>
-          <p>
+        <div style={{ overflowY: "scroll", height: "200px" }}>
+          {graphData.value.sort((a, b) => (new Date(a.start.dateTime) - new Date(b.start.dateTime))).map((data) => (
+            <li>
+              {data.subject} - {data.start.dateTime}
+            </li>
+          )
+
+          )}
+          {/* <p>
             <strong>Subject: </strong> {graphData.value[0].subject}
           </p>
           <p>
             <strong>Body: </strong> {graphData.value[0].start.dateTime}
-          </p>
-        </>
+          </p> */}
+        </div>
       ) : (
         RequestProfileData()
         // <button onClick={RequestProfileData}>
