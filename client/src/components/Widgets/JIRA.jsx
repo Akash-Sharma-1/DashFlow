@@ -1,31 +1,29 @@
-import React from "react";
 import gcal from "./Google_Calendar_icon.png";
 import axios from "axios";
 import Arrow from "./arrow.svg";
+import React, { useState, useEffect } from "react";
 
 const JIRA = () => {
-  const [tokens, setTokens] = useState([]);
+  const [issues, setIssues] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem("tokens", JSON.stringify(tokens));
-  }, [tokens]);
+    let urlToSend = "/api/getJiraIssue"
 
-  //   useEffect(() => {
-  //     axios
-  //       .get(weblink)
-  //       .then((response) => {
-  //         setCurrSong(response.data.recenttracks.track.name);
-  //         setCurrArtist(response.data.recenttracks.track.artist["#text"]);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   }, []);
+    axios.get(urlToSend)
+    .then(res=>{
+        console.log(res.data)
+        setIssues(res.data)
+    })
+
+  }, []);
 
   return (
     <div className="cal-widget">
       {/* <img src={gcal} alt="gcal" className="cal-icon" /> */}
       <div>
-        <p>adding some cal stuff ...</p>
+      {JSON.stringify(issues)}
       </div>
+
       <button
         className="cal-widget-button"
         style={{
