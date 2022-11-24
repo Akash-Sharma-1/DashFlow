@@ -15,6 +15,7 @@ import Todos from "./Widgets/Todos";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import "./../App.css";
+import JIRA from "./Widgets/JIRA";
 
 // const props = {
 //   isDraggable: true,
@@ -193,7 +194,7 @@ export default class ShowcaseLayout extends React.Component {
             <Todos />
           </div>
           <div key="6">
-            <Github />
+            <JIRA />
           </div>
           <div key="7">
             <Github />

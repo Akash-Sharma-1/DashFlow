@@ -6,8 +6,6 @@ import Header from "./components/Header";
 import Layout from "./components/Layout";
 import ShowcaseLayout from "./components/Layout";
 
-import Layout2 from "./components/Layout2";
-
 //compos
 
 function App() {
